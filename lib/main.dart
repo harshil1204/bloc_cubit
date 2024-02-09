@@ -1,7 +1,9 @@
 import 'package:bloc_cubit/base/bloc_observer.dart';
+import 'package:bloc_cubit/bloc/apicall/api_call_bloc.dart';
 import 'package:bloc_cubit/bloc/counter/counter_bloc.dart';
 import 'package:bloc_cubit/bloc/todo/to_do_bloc.dart';
 import 'package:bloc_cubit/helper/l10n.dart';
+import 'package:bloc_cubit/ui/api%20call/api_call.dart';
 import 'package:bloc_cubit/ui/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +33,8 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ToDoBloc(),
-        )
+        ),
+     //   BlocProvider(create: (context) => ApiCallBloc(),)
         //BlocProvider(create: (context) => Counter1Bloc(),)
       ],
       child: MaterialApp(
@@ -48,6 +51,9 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate
         ],
+        routes: const {
+          ApiCall.routeName: ApiCall.builder
+        },
         home: const HomePage(),
       ),
     );

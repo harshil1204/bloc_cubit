@@ -1,4 +1,5 @@
 import 'package:bloc_cubit/helper/l10n.dart';
+import 'package:bloc_cubit/ui/api%20call/api_call.dart';
 import 'package:bloc_cubit/ui/counter_screen.dart';
 import 'package:bloc_cubit/ui/switch_screen.dart';
 import 'package:bloc_cubit/ui/todo/todo_screen.dart';
@@ -41,6 +42,10 @@ class _HomePageState extends State<HomePage> {
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => const FavouriteScreen(),));
             }, child: const Text("Favourite App")),
+
+            ElevatedButton(onPressed: (){
+              Navigator.pushNamed(context, ApiCall.routeName,arguments: ApiCallArguments(index: 2));
+            }, child: const Text("api call")),
 
            // Text(context.l10n.errorNoInternet)
           ],

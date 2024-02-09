@@ -26,10 +26,10 @@ class _CounterScreenState extends State<CounterScreen> {
                 children: [
                   ElevatedButton(onPressed: () {
                    context.read<CounterBloc>().add(IncrementCounter());
-                  }, child: Text("Add")),
+                  }, child: const Text("Add")),
                   ElevatedButton(onPressed: () {
                   context.read<CounterBloc>().add(DecrementCounter());
-                  }, child: Text("removed")),
+                  }, child: const Text("removed")),
                 ],
               ),
 
